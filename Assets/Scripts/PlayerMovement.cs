@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
+#if UNITY_5_3_3
+    using UnityEngine.SceneManagement;
+#endif
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -47,24 +49,24 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		// P2
 		else if (transform.localPosition.x == 13 && transform.localPosition.y == 13) {
-			horiztonalCtrl = "Horizontal_P1";
-			verticalCtrl = "Vertical_P1";
+			horiztonalCtrl = "Horizontal_P2";
+			verticalCtrl = "Vertical_P2";
 		}
 		// P3
 		else if (transform.localPosition.x == 13 && transform.localPosition.y == 2) {
-			horiztonalCtrl = "Horizontal_P1";
-			verticalCtrl = "Vertical_P1";
+			horiztonalCtrl = "Horizontal_P3";
+			verticalCtrl = "Vertical_P3";
 		}
 		// P4
 		else if (transform.localPosition.x == 2 && transform.localPosition.y == 13) {
-			horiztonalCtrl = "Horizontal_P1";
-			verticalCtrl = "Vertical_P1";
+			horiztonalCtrl = "Horizontal_P4";
+			verticalCtrl = "Vertical_P4";
 		}
 
-		facingDirection = DetermineFacingDirection();
+		facingDirection = "right";
 
-		// We don't flip to the right because that's the default direction
-		if (facingDirection == "left")
+        // We don't flip to the right because that's the default direction
+        if (transform.localPosition.x == 13) { }
 			Flip();
 
 	}
@@ -146,17 +148,6 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 tempScale = transform.localScale;
 		tempScale.x *= -1;
 		transform.localScale = tempScale;
-
-	}
-
-	// This function determines the initial starting position of the player.
-	private string DetermineFacingDirection() {
-		
-		if (transform.localPosition.x == 13) {
-			return "left";
-		}
-
-		return "right";
 
 	}
 

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-using UnityEngine.SceneManagement;
+#if UNITY_5_3_3
+    using UnityEngine.SceneManagement;
+#endif
+
 
 public class GameManager : MonoBehaviour {
 
@@ -51,19 +54,27 @@ public class GameManager : MonoBehaviour {
 		// Restart the match
 		if (Input.GetKeyDown(KeyCode.R)) {
 
-			SceneManager.LoadScene("Game");
-
+            #if UNITY_5_3_3
+                    SceneManager.LoadScene("Game");
+            #else
+                     Application.LoadLevel("Game");
+            #endif
 		}
 
 		// Return to main menu
 		if (Input.GetKeyDown(KeyCode.X)) {
 
 			Destroy(this);
-			SceneManager.LoadScene("Menu");
 
-		}
+            #if UNITY_5_3_3
+                    SceneManager.LoadScene("Menu");
+            #else
+                    Application.LoadLevel("Menu");
+            #endif
 
-	}
+        }
+
+    }
 
 	// Function to display a GUI on runtime
 	void OnGUI() {
