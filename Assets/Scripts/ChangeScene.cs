@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-#if UNITY_5_3_3
+#if UNITY_5_3_4
     using UnityEngine.SceneManagement;
 #endif
 
@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour {
 	// Update is called once per frame
 	public void ChangeToScene(string scene) {
 
-#if UNITY_5_3_3
+#if UNITY_5_3_4
         SceneManager.LoadScene(scene);
 #else
         Application.LoadLevel(scene);

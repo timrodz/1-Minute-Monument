@@ -8,8 +8,11 @@ public class PlayerMovement : MonoBehaviour {
 
 	public BoardManager boardScript;
 
-	// Accesing the collision check object
-	public BoxCollider2D collisionCheck;
+    private float xPosition;
+    private float yPosition;
+
+    // Accesing the collision check object
+    public BoxCollider2D collisionCheck;
 
 	public Rigidbody2D rb; // Accesing physics
 	public Animator anim;  // Animation controller
@@ -30,8 +33,16 @@ public class PlayerMovement : MonoBehaviour {
     [HideInInspector]
 	public string facingDirection;
 
-	// This happens before spawning the object
-	void Awake() {
+    // For resource collecting
+    public int CratesHeld;
+
+    //public int P1CratesHeld;
+    //public int P2CratesHeld;
+    //public int P3CratesHeld;
+    //public int P4CratesHeld;
+
+    // This happens before spawning the object
+    void Awake() {
 		
 		collisionCheck = GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
@@ -87,7 +98,12 @@ public class PlayerMovement : MonoBehaviour {
 			print("Colliding!");
 		}
 
-	}
+        // Getting updated xy position
+        xPosition = transform.position.x;
+        yPosition = transform.position.y;
+
+
+    }
 
 	// Called every phyics step
 	// Adjusting rigidbody objects
@@ -150,5 +166,31 @@ public class PlayerMovement : MonoBehaviour {
 		transform.localScale = tempScale;
 
 	}
+
+    // Resource collecting
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Resource")
+        {
+            Destroy(other.gameObject);
+
+                CratesHeld++;
+                maxSpeed--;
+  
+        }
+    }
+
+    // For player 1 only, as they spawn at 2,2
+    private void DropOffCrates()
+    {
+        if (((xPosition > 1.8f) && (xPosition < 2.2f)) &&
+            ((yPosition > 1.8f) && (yPosition < 2.2f)))
+        {
+            CratesHeld = 0;
+            maxSpeed = 5;
+        }
+
+    }
 
 }

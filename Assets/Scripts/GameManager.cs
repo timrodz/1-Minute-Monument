@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-#if UNITY_5_3_3
+#if UNITY_5_3_4
     using UnityEngine.SceneManagement;
 #endif
 
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour {
 		// Restart the match
 		if (Input.GetKeyDown(KeyCode.R)) {
 
-            #if UNITY_5_3_3
+            #if UNITY_5_3_4
                     SceneManager.LoadScene("Game");
             #else
                      Application.LoadLevel("Game");
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
 
 			Destroy(this);
 
-            #if UNITY_5_3_3
+            #if UNITY_5_3_4
                     SceneManager.LoadScene("Menu");
             #else
                     Application.LoadLevel("Menu");
