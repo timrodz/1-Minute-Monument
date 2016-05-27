@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+
 #if UNITY_5_3_4
     using UnityEngine.SceneManagement;
 #endif
@@ -54,11 +55,11 @@ public class GameManager : MonoBehaviour {
 		// Restart the match
 		if (Input.GetKeyDown(KeyCode.R)) {
 
-            #if UNITY_5_3_4
+			#if UNITY_5_3_4
                     SceneManager.LoadScene("Game");
-            #else
-                     Application.LoadLevel("Game");
-            #endif
+			#else
+			Application.LoadLevel("Game");
+			#endif
 		}
 
 		// Return to main menu
@@ -66,15 +67,15 @@ public class GameManager : MonoBehaviour {
 
 			Destroy(this);
 
-            #if UNITY_5_3_4
+			#if UNITY_5_3_4
                     SceneManager.LoadScene("Menu");
-            #else
-                    Application.LoadLevel("Menu");
-            #endif
+			#else
+			Application.LoadLevel("Menu");
+			#endif
 
-        }
+		}
 
-    }
+	}
 
 	// Function to display a GUI on runtime
 	void OnGUI() {
@@ -83,14 +84,15 @@ public class GameManager : MonoBehaviour {
 
 		if (paused) {
 
-			GUILayout.BeginArea(new Rect(0, (Screen.height / 2) - 50, Screen.width, Screen.height));
+			GUILayout.BeginArea(new Rect(0, ( Screen.height / 2 ) - 50, Screen.width, Screen.height));
 			var centeredStyle = GUI.skin.GetStyle("Label");
 			centeredStyle.alignment = TextAnchor.UpperCenter;
 			GUILayout.Label(" Game is paused");
 			GUILayout.Label(" Press ESC / START to unpause");
 			GUILayout.EndArea();
 
-		} else {
+		}
+		else {
 
 			GUILayout.Label(" Press ESC /\n START to pause");
 			GUILayout.Label("\n Press R to restart");

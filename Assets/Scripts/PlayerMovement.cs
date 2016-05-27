@@ -1,48 +1,56 @@
 ﻿using UnityEngine;
 using System.Collections;
+
 #if UNITY_5_3_3
-    using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement;
 #endif
 
 public class PlayerMovement : MonoBehaviour {
 
 	public BoardManager boardScript;
 
-    private float xPosition;
-    private float yPosition;
+	private float xPosition;
+	private float yPosition;
 
-    // Accesing the collision check object
-    public BoxCollider2D collisionCheck;
+	// Accesing the collision check object
+	public BoxCollider2D collisionCheck;
 
-	public Rigidbody2D rb; // Accesing physics
-	public Animator anim;  // Animation controller
+	public Rigidbody2D rb;
+	// Accesing physics
+	public Animator anim;
+	// Animation controller
 
-	public float maxSpeed = 5f;    // The speed with which the player will move
-	public float moveForce = 300f; // The force that will be applied to the speed
+	public float maxSpeed = 5f;
+	// The speed with which the player will move
+	public float moveForce = 300f;
+	// The force that will be applied to the speed
 
-	private bool isColliding; // Determining collision
+	private bool isColliding;
+	// Determining collision
 
 	// Input
 	private float speedH;
 	private float speedV;
 
-    // To distinguish between player 1 and 2 movement 
-    private string horiztonalCtrl = "";  // defaults to player 1
-    private string verticalCtrl = "";    // defaults to player 1
+	// To distinguish between player 1 and 2 movement
+	private string horiztonalCtrl = "";
+	// defaults to player 1
+	private string verticalCtrl = "";
+	// defaults to player 1
 
-    [HideInInspector]
+	[HideInInspector]
 	public string facingDirection;
 
-    // For resource collecting
-    public int CratesHeld;
+	// For resource collecting
+	public int CratesHeld;
 
-    //public int P1CratesHeld;
-    //public int P2CratesHeld;
-    //public int P3CratesHeld;
-    //public int P4CratesHeld;
+	//public int P1CratesHeld;
+	//public int P2CratesHeld;
+	//public int P3CratesHeld;
+	//public int P4CratesHeld;
 
-    // This happens before spawning the object
-    void Awake() {
+	// This happens before spawning the object
+	void Awake() {
 		
 		collisionCheck = GetComponent<BoxCollider2D>();
 		rb = GetComponent<Rigidbody2D>();
@@ -76,9 +84,10 @@ public class PlayerMovement : MonoBehaviour {
 
 		facingDirection = "right";
 
-        // We don't flip to the right because that's the default direction
-        if (transform.localPosition.x == 13) { }
-			Flip();
+		// We don't flip to the right because that's the default direction
+//		if (transform.localPosition.x == 13) {
+//		}
+		Flip();
 
 	}
 
@@ -98,12 +107,12 @@ public class PlayerMovement : MonoBehaviour {
 			print("Colliding!");
 		}
 
-        // Getting updated xy position
-        xPosition = transform.position.x;
-        yPosition = transform.position.y;
+		// Getting updated xy position
+		xPosition = transform.position.x;
+		yPosition = transform.position.y;
 
 
-    }
+	}
 
 	// Called every phyics step
 	// Adjusting rigidbody objects
@@ -114,12 +123,12 @@ public class PlayerMovement : MonoBehaviour {
 		speedV = Input.GetAxisRaw(verticalCtrl);
 
 		// Add the horizontal movement force to the player
-		if ((speedH * rb.velocity.x < maxSpeed)) {
+		if (( speedH * rb.velocity.x < maxSpeed )) {
 			rb.AddForce(new Vector2(speedH * moveForce, 0f));
 		}
 
 		// Add the vertical movement force to the player
-		if ((speedV * rb.velocity.y < maxSpeed)) {
+		if (( speedV * rb.velocity.y < maxSpeed )) {
 			rb.AddForce(new Vector2(0f, speedV * moveForce));
 		}
 
@@ -167,30 +176,30 @@ public class PlayerMovement : MonoBehaviour {
 
 	}
 
-    // Resource collecting
+	// Resource collecting
+	private void OnTriggerEnter2D(Collider2D other) {
+        
+		if (other.tag == "Resource") {
+			Destroy(other.gameObject);
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Resource")
-        {
-            Destroy(other.gameObject);
-
-                CratesHeld++;
-                maxSpeed--;
+			CratesHeld++;
+			maxSpeed -= 0.5f;
   
-        }
-    }
+		}
 
-    // For player 1 only, as they spawn at 2,2
-    private void DropOffCrates()
-    {
-        if (((xPosition > 1.8f) && (xPosition < 2.2f)) &&
-            ((yPosition > 1.8f) && (yPosition < 2.2f)))
-        {
-            CratesHeld = 0;
-            maxSpeed = 5;
-        }
+	}
 
-    }
+	// For player 1 only, as they spawn at 2,2
+	private void DropOffCrates() {
+		
+		if (( ( xPosition > 1.8f ) && ( xPosition < 2.2f ) ) &&
+		    ( ( yPosition > 1.8f ) && ( yPosition < 2.2f ) )) {
+
+			CratesHeld = 0;
+			maxSpeed = 5;
+		
+		}
+
+	}
 
 }

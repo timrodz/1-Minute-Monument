@@ -42,14 +42,28 @@ public class BoardManager : MonoBehaviour {
 	public GameObject[] floorTiles;
 	public GameObject[] players;
 
-    private List<Vector3> gridPosition = new List<Vector3>();
+	private List<Vector3> gridPosition = new List<Vector3>();
 
-	public void SetIndex(int i) {
-		index = i;
-	}
+	// Setting up the scene
+	public void SetupScene() {
 
-	public int GetIndex() {
-		return index;
+		for (int i = 0; i < players.Length; i++) {
+
+			if (0 == i)
+				SpawnObjectAt(players, i, 2, 2);
+			if (1 == i)
+				SpawnObjectAt(players, i, rows - 3, columns - 3);
+			if (2 == i)
+				SpawnObjectAt(players, i, rows - 3, i);
+			if (3 == i)
+				SpawnObjectAt(players, i, 2, columns - 3);
+
+		}
+
+		InitializeList();
+
+		BoardSetup();
+
 	}
 
 	// Creating the board
@@ -113,56 +127,13 @@ public class BoardManager : MonoBehaviour {
 
 	}
 
-	// Instances at random position
-	private void SpawnObjectRandomly(GameObject[] _obj, int _min, int _max) {
 
-		int ammountOfObjectsToSpawn = Random.Range(_min, _max);
-
-		for (int i = 0; i < ammountOfObjectsToSpawn; i++) {
-
-			Vector3 position = RandomPosition();
-			GameObject instance = _obj[Random.Range(0, _obj.Length)];
-			Instantiate(instance, position, Quaternion.identity);
-
-		}
-
-	}
 
 	private void SpawnObjectAt(GameObject[] _obj, int _index, int _x, int _y) {
 
 		Vector3 position = new Vector3(_x, _y, 0);
 		GameObject instance = _obj[_index];
 		Instantiate(instance, position, Quaternion.identity);
-
-	}
-
-	// Setting up the scene
-	public void SetupScene() {
-
-		for (int i = 0; i < players.Length; i++) {  // not working correctly?
-
-			//index = 1;
-		
-			if (0 == i)
-				SpawnObjectAt(players, i, 2, 2);
-			if (1 == i)
-				SpawnObjectAt(players, i, rows - 3, columns - 3);
-			if (2 == i)
-				SpawnObjectAt(players, i, rows - 3, i);
-			if (3 == i)
-				SpawnObjectAt(players, i, 2, columns - 3);
-
-		}
-       
-        InitializeList();
-
-		// Spawning the entities
-		//SpawnObjectAt(wallTiles, wallCount.GetMin(), wallCount.GetMax());
-		SpawnObjectRandomly(resourceTiles, resourceCount.GetMin(), resourceCount.GetMax());
-
-		// Spawning the players
-		BoardSetup();
-		
 
 	}
 
