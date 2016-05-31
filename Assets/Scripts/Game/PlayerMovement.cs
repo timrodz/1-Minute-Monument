@@ -219,28 +219,28 @@ public class PlayerMovement : MonoBehaviour {
 
 		// Dropping off crates - just for player one at the moment - will need to add base 1, 2, 3, 4 tags etc
 		if (( other.tag == "Base1" ) && ( drop == "Drop1" )) { 
-			print("Player 1 dropping crates");
+//			print("Player 1 dropping crates");
 			TotalCrates += CratesHeld;
 			CratesHeld = 0;
 			maxSpeed = 5;
 		}
 
 		if (( other.tag == "Base2" ) && ( drop == "Drop2" )) {
-			print("Player 2 dropping crates");
+//			print("Player 2 dropping crates");
 			TotalCrates += CratesHeld;
 			CratesHeld = 0;
 			maxSpeed = 5;
 		}
 
 		if (( other.tag == "Base3" ) && ( drop == "Drop3" )) {
-			print("Player 3 dropping crates");
+//			print("Player 3 dropping crates");
 			TotalCrates += CratesHeld;
 			CratesHeld = 0;
 			maxSpeed = 5;
 		}
 
 		if (( other.tag == "Base4" ) && ( drop == "Drop4" )) {
-			print("Player 4 dropping crates");
+//			print("Player 4 dropping crates");
 			TotalCrates += CratesHeld;
 			CratesHeld = 0;
 			maxSpeed = 5;

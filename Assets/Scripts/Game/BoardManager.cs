@@ -172,13 +172,6 @@ public class BoardManager : MonoBehaviour {
 
 		InitializeList();
 
-		// Spawning the entities
-		//SpawnObjectAt(wallTiles, wallCount.GetMin(), wallCount.GetMax());
-
-		//	SpawnObjectRandomly(resourceTiles, resourceCount.GetMin(), resourceCount.GetMax());
-
-//		SpawnObjectRandomly(resourceTiles, 6, 15);
-
 		// Spawning the players
 		BoardSetup();
 

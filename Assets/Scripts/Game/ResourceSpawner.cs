@@ -46,13 +46,13 @@ public class ResourceSpawner : MonoBehaviour {
 			currentRow = Random.Range(countRow / 4, countRow / 2 + countRow / 4);
 			currentCol = Random.Range(countCol / 4, countCol / 2 + countCol / 4);
 
-			while (currentRow == lastRow && currentCol == lastCol) {
+//			print("Current Coordinates: " + currentCol + " - " + currentRow);
+			print(Physics.CheckSphere(new Vector3(currentCol, currentRow, -1), 40));
 
-				print("WHOOPS");
+			if (Physics.CheckSphere(new Vector3(currentCol, currentRow, -1), 4)) {
 
-				currentRow = Random.Range(countRow / 4, countRow / 2 + countRow / 4);
-				currentCol = Random.Range(countCol / 4, countCol / 2 + countCol / 4);
-
+				print("Overlapping at " + currentCol + " - " + currentRow);
+				
 			}
 
 			lastRow = currentRow;
