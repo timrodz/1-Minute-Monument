@@ -9,23 +9,17 @@ public class ResourceSpawner : MonoBehaviour {
 
 	public GameObject[] resourceTiles;
 
-	public float waitTime;
-
-	private float startTime;
-	private float elapsedTime;
+	public float waitTime = 1;
 
 	int lastRow, lastCol;
 	int currentRow, currentCol;
 	int countRow, countCol;
 
-	private List<Vector3> gridPosition = new List<Vector3>();
-
 	// Use this for initialization
 	void Start() {
 
 		resourceHolder = new GameObject("Resources").transform;
-		
-		startTime = Time.unscaledTime;
+
 		GameObject boardObject = GameObject.Find("GameManager");
 		BoardManager boardScript = boardObject.GetComponent<BoardManager>();
 
@@ -64,18 +58,15 @@ public class ResourceSpawner : MonoBehaviour {
 			lastRow = currentRow;
 			lastCol = currentCol;
 
-			SpawnObjectAt(resourceTiles, Random.Range(0, resourceTiles.Length), currentRow, currentCol);
-
+			SpawnObjectAt(resourceTiles, Random.Range(0, resourceTiles.Length), currentCol, currentRow);
 
 		}
-
-
-
+			
 	}
 
 	private void SpawnObjectAt(GameObject[] _obj, int _index, int _x, int _y) {
 
-		Vector3 position = new Vector3(_x, _y, 0);
+		Vector3 position = new Vector3(_x, _y, -1);
 		GameObject instance = _obj[_index];
 		GameObject ins = Instantiate(instance, position, Quaternion.identity) as GameObject;
 		ins.transform.SetParent(resourceHolder);
