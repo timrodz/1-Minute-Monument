@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	public BoardManager boardScript;
+	//public BoardManager boardScript;
 
 	private float xPosition;
 	private float yPosition;
@@ -54,11 +54,11 @@ public class PlayerMovement : MonoBehaviour {
 		anim = GetComponent<Animator>();
 
 		GameObject obj = GameObject.Find("GameManager");
-		boardScript = obj.GetComponent<BoardManager>();
+		//boardScript = obj.GetComponent<BoardManager>();
 //		boardScript = obj;
 
-		rows = boardScript.rows;
-		cols = boardScript.columns;
+		//rows = boardScript.rows;
+		//cols = boardScript.columns;
 
 	}
 
@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour {
 		facingDirection = "right";
 
 		// We don't flip to the right because that's the default direction
-		if (transform.localPosition.x == 13)
+		if (transform.localPosition.x > 13)
 			Flip();
 
 	}
