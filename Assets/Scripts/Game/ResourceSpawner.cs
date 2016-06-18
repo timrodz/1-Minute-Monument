@@ -29,30 +29,29 @@ public class ResourceSpawner : MonoBehaviour {
 		StartCoroutine(Spawner());
 
 	}
-	
+
 	// Update is called once per frame
 	void Update() {
 
 
-	
+
 	}
 
 	private IEnumerator Spawner() {
 
 		while (true) {
-		
+
 			yield return new WaitForSeconds(waitTime);
 
 			currentRow = Random.Range(countRow / 4, countRow / 2 + countRow / 4);
 			currentCol = Random.Range(countCol / 4, countCol / 2 + countCol / 4);
 
-//			print("Current Coordinates: " + currentCol + " - " + currentRow);
 			print(Physics.CheckSphere(new Vector3(currentCol, currentRow, -1), 40));
 
 			if (Physics.CheckSphere(new Vector3(currentCol, currentRow, -1), 4)) {
 
 				print("Overlapping at " + currentCol + " - " + currentRow);
-				
+
 			}
 
 			lastRow = currentRow;
@@ -61,7 +60,7 @@ public class ResourceSpawner : MonoBehaviour {
 			SpawnObjectAt(resourceTiles, Random.Range(0, resourceTiles.Length), currentCol, currentRow);
 
 		}
-			
+
 	}
 
 	private void SpawnObjectAt(GameObject[] _obj, int _index, int _x, int _y) {

@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 62378c2e3bb2f754aadaf9533989db7e
+timeCreated: 1466215699
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Rodrigo_Move_0
+    21300002: Rodrigo_Move_1
+    21300004: Rodrigo_Move_2
+    21300006: Rodrigo_Move_3
+    21300008: Rodrigo_Move_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 18
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Rodrigo_Move_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 15}
+        - {x: -17.5, y: 10}
+        - {x: -17.5, y: -18}
+        - {x: 16.5, y: -18}
+        - {x: 16.5, y: 3}
+        - {x: 1.5, y: 15}
+    - name: Rodrigo_Move_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 36
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5, y: 18}
+        - {x: -17.5, y: 11}
+        - {x: -17.5, y: -18}
+        - {x: 17.5, y: -18}
+        - {x: 17.5, y: 6}
+        - {x: 0.5, y: 18}
+    - name: Rodrigo_Move_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 36
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.5, y: 18}
+        - {x: -14.5, y: 18}
+        - {x: -17.5, y: 13}
+        - {x: -17.5, y: 6}
+        - {x: -11.5, y: -3}
+        - {x: -17.5, y: -11}
+        - {x: -17.5, y: -18}
+        - {x: 15.5, y: -18}
+        - {x: 17.5, y: -14}
+        - {x: 17.5, y: 4}
+    - name: Rodrigo_Move_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.5, y: 18}
+        - {x: -17.5, y: 16}
+        - {x: -17.5, y: -18}
+        - {x: 16.5, y: -18}
+        - {x: 17.5, y: -16}
+        - {x: 17.5, y: 6}
+        - {x: 3.5, y: 18}
+    - name: Rodrigo_Move_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: 17}
+        - {x: -5.5, y: 17}
+        - {x: -17.5, y: 13}
+        - {x: -17.5, y: -18}
+        - {x: 15.5, y: -18}
+        - {x: 16.5, y: -17}
+        - {x: 17.5, y: -11}
+        - {x: 17.5, y: 3}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
