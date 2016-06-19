@@ -1,0 +1,283 @@
+fileFormatVersion: 2
+guid: 48e1bd365a15c1c408dd801b6a007a36
+timeCreated: 1466215661
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: J3FF_ATK_0
+    21300002: J3FF_ATK_1
+    21300004: J3FF_ATK_2
+    21300006: J3FF_ATK_3
+    21300008: J3FF_ATK_4
+    21300010: J3FF_ATK_5
+    21300012: J3FF_ATK_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 18
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: J3FF_ATK_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.5, y: 7}
+        - {x: -3.5, y: 5}
+        - {x: -3.5, y: -5}
+        - {x: -1.5, y: -7}
+        - {x: 0.5, y: -7}
+        - {x: 2.5, y: -5}
+        - {x: 2.5, y: 5}
+        - {x: 0.5, y: 7}
+    - name: J3FF_ATK_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 84
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 9}
+        - {x: -17.5, y: 9}
+        - {x: -22.5, y: 6}
+        - {x: -22.5, y: -8}
+        - {x: -15.5, y: -14}
+        - {x: -11.5, y: -13}
+        - {x: -13.5, y: -1}
+        - {x: -14.5, y: 2}
+        - {x: -11.5, y: 6}
+    - name: J3FF_ATK_2
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 84
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22.5, y: -8}
+        - {x: -19.5, y: -14}
+        - {x: -9.5, y: -14}
+        - {x: -5.5, y: -12}
+        - {x: -5.5, y: 0}
+        - {x: -7.5, y: 14}
+        - {x: -18.5, y: 14}
+        - {x: -22.5, y: 10}
+      - - {x: -21.5, y: 14}
+        - {x: -20.5, y: 11}
+        - {x: -17.5, y: 11}
+        - {x: -15.5, y: 13}
+        - {x: -16.5, y: 16}
+        - {x: -19.5, y: 16}
+    - name: J3FF_ATK_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 42
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.5, y: -11}
+        - {x: -13.5, y: -12}
+        - {x: -13.5, y: -15}
+        - {x: -12.5, y: -17}
+        - {x: -8.5, y: -17}
+        - {x: -7.5, y: -16}
+        - {x: -7.5, y: -12}
+        - {x: -9.5, y: -11}
+      - - {x: -5.5, y: -5}
+        - {x: -5.5, y: -7}
+        - {x: -4.5, y: -10}
+        - {x: 2.5, y: -11}
+        - {x: 9.5, y: -11}
+        - {x: 10.5, y: -10}
+        - {x: 10.5, y: -6}
+        - {x: 6.5, y: -5}
+      - - {x: -6.5, y: 0}
+        - {x: -6.5, y: -2}
+        - {x: -2.5, y: -5}
+        - {x: 6.5, y: -5}
+        - {x: 10.5, y: -2}
+        - {x: 9.5, y: 1}
+        - {x: -4.5, y: 2}
+      - - {x: -7.5, y: 11}
+        - {x: -8.5, y: 8}
+        - {x: -8.5, y: 6}
+        - {x: -5.5, y: 4}
+        - {x: 7.5, y: 4}
+        - {x: 9.5, y: 6}
+        - {x: 9.5, y: 9}
+        - {x: 7.5, y: 11}
+      - - {x: -11.5, y: 12}
+        - {x: -8.5, y: 13}
+        - {x: -8.5, y: 16}
+        - {x: -11.5, y: 17}
+        - {x: -13.5, y: 15}
+      - - {x: -17.5, y: 13}
+        - {x: -14.5, y: 14}
+        - {x: -14.5, y: 17}
+        - {x: -17.5, y: 18}
+        - {x: -19.5, y: 16}
+    - name: J3FF_ATK_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 42
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.5, y: -19}
+        - {x: -7.5, y: -21}
+        - {x: -4.5, y: -20}
+        - {x: -4.5, y: -17}
+        - {x: -6.5, y: -15}
+        - {x: -9.5, y: -16}
+      - - {x: -0.5, y: -7}
+        - {x: 0.5, y: -11}
+        - {x: 6.5, y: -12}
+        - {x: 14.5, y: -12}
+        - {x: 15.5, y: -10}
+        - {x: 14.5, y: -7}
+        - {x: 1.5, y: -5}
+      - - {x: 1.5, y: 0}
+        - {x: 2.5, y: -3}
+        - {x: 13.5, y: -3}
+        - {x: 15.5, y: -1}
+        - {x: 14.5, y: 2}
+        - {x: 3.5, y: 2}
+      - - {x: 3.5, y: 11}
+        - {x: 2.5, y: 8}
+        - {x: 3.5, y: 5}
+        - {x: 12.5, y: 5}
+        - {x: 14.5, y: 6}
+        - {x: 14.5, y: 11}
+      - - {x: -9.5, y: 15}
+        - {x: -6.5, y: 16}
+        - {x: -6.5, y: 19}
+        - {x: -9.5, y: 20}
+        - {x: -11.5, y: 18}
+      - - {x: -12.5, y: 19}
+        - {x: -12.5, y: 21}
+        - {x: -17.5, y: 21}
+        - {x: -15.5, y: 18}
+    - name: J3FF_ATK_5
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 42
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -0.5, y: -21}
+        - {x: -0.5, y: -19}
+        - {x: -3.5, y: -18}
+        - {x: -5.5, y: -21}
+      - - {x: 14.5, y: -12}
+        - {x: 17.5, y: -11}
+        - {x: 17.5, y: -8}
+        - {x: 14.5, y: -7}
+        - {x: 12.5, y: -9}
+      - - {x: 14.5, y: 1}
+        - {x: 14.5, y: -2}
+        - {x: 15.5, y: -4}
+        - {x: 17.5, y: -4}
+        - {x: 20.5, y: -1}
+        - {x: 19.5, y: 2}
+        - {x: 16.5, y: 2}
+      - - {x: 10.5, y: 5}
+        - {x: 18.5, y: 5}
+        - {x: 18.5, y: 10}
+        - {x: 17.5, y: 11}
+        - {x: 14.5, y: 11}
+        - {x: 9.5, y: 8}
+      - - {x: -4.5, y: 19}
+        - {x: -4.5, y: 21}
+        - {x: -9.5, y: 21}
+        - {x: -7.5, y: 18}
+    - name: J3FF_ATK_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 45
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: -9}
+        - {x: 3.5, y: -8}
+        - {x: 3.5, y: -5}
+        - {x: 0.5, y: -4}
+        - {x: -1.5, y: -6}
+      - - {x: -1.5, y: 4}
+        - {x: 1.5, y: 5}
+        - {x: 1.5, y: 8}
+        - {x: -1.5, y: 9}
+        - {x: -3.5, y: 7}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
