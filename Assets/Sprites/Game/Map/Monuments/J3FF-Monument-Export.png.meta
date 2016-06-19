@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: 32a44e7b4a21150488de5f038d067aa7
-timeCreated: 1466215279
+timeCreated: 1466251720
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: J3FF-Monument-Export_0
+    21300002: J3FF-Monument-Export_1
+    21300004: J3FF-Monument-Export_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,8 +32,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,18 +41,58 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: J3FF-Monument-Export_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 57
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: J3FF-Monument-Export_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 57
+        width: 26
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: J3FF-Monument-Export_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 37
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 28.5}
+        - {x: -18.5, y: -0.5}
+        - {x: -18.5, y: -26.5}
+        - {x: -14.5, y: -28.5}
+        - {x: 18.5, y: -28.5}
+        - {x: 18.5, y: 5.5}
+        - {x: 1.5, y: 28.5}
     outline: []
   spritePackingTag: 
   userData: 
