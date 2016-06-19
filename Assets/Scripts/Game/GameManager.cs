@@ -7,13 +7,10 @@ using XboxCtrlrInput;
 using UnityEngine.SceneManagement;
 #endif
 
-
 public class GameManager : MonoBehaviour {
 
-	// Singleton
+	// Make this class a singleton
 	public static GameManager instance = null;
-
-	public Font font;
 
 	// Player related variables
 	public GameObject[] playerPrefabs;
@@ -21,10 +18,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject[] playerScoreBoards;
 	public Text[] PlayerScoreText;
 
+	// Parent placeholders
 	private Transform PlayerHolder;
 	private Transform MonumentHolder;
 	private Transform ScoreBoardHolder;
-	public Transform CanvasHolder;
 
 	// Accesing the controllers
 	private XboxController[] controller = {
@@ -35,8 +32,16 @@ public class GameManager : MonoBehaviour {
 	};
 
 	// Others //
-	private bool paused = false;
+	public float TimeToShowControls = 5f;
+	public float TimeBetweenCountdowns = 1f;
+	public Image ControlImage;
+	public Text CountdownText;
+	public Font font;
+	public AudioClip[] clip;
+
+	private bool bIsPaused = false;
 	private int iNumControllers;
+	private AudioSource source;
 
 	// Use this for initialization
 	void Awake() {
@@ -52,13 +57,68 @@ public class GameManager : MonoBehaviour {
 
 		}
 
-		DontDestroyOnLoad(gameObject);
+		//DontDestroyOnLoad(gameObject);
+		source = GetComponent<AudioSource>();
 
 		iNumControllers = XCI.GetNumPluggedCtrlrs();
 		Debug.Log("There are " + iNumControllers + " Xbox controllers plugged in.");
 
 		// Determine how many controllers are connected and create the players based on this ammount.
 		playerSetup();
+
+		StartCoroutine(StartingScreen(TimeToShowControls));
+
+	}
+
+	void Update() {
+
+		// Pause the game
+		bool bPause1 = XCI.GetButtonDown(XboxButton.Start, controller[0]);
+		bool bPause2 = XCI.GetButtonDown(XboxButton.Start, controller[1]);
+		bool bPause3 = XCI.GetButtonDown(XboxButton.Start, controller[2]);
+		bool bPause4 = XCI.GetButtonDown(XboxButton.Start, controller[3]);
+		if (bPause1 || bPause2 || bPause3 || bPause4) {
+
+			bIsPaused = !bIsPaused;
+
+			source.PlayOneShot(clip[0]);
+
+			if (bIsPaused == true)
+				Time.timeScale = 0;
+			else
+				Time.timeScale = 1;
+
+		}
+
+		// Restart the match
+		if (Input.GetKeyDown(KeyCode.R)) {
+
+#if UNITY_5_3_OR_NEWER
+			SceneManager.LoadScene("Game Better Version");
+#else
+			Application.LoadLevel("Game");
+#endif
+		}
+
+		UpdateScores();
+
+	}
+
+	// Function to display a GUI on runtime
+	void OnGUI() {
+
+		GUI.skin.font = font;
+
+		if (bIsPaused) {
+
+			GUILayout.BeginArea(new Rect(0, (Screen.height / 2) - 50, Screen.width, Screen.height));
+			var centeredStyle = GUI.skin.GetStyle("Label");
+			centeredStyle.alignment = TextAnchor.UpperCenter;
+			GUILayout.Label(" Game is paused");
+			GUILayout.Label(" Press START to unpause");
+			GUILayout.EndArea();
+
+		}
 
 	}
 
@@ -101,6 +161,7 @@ public class GameManager : MonoBehaviour {
 
 		// Disable the score text based on the player number
 		switch (iNumControllers) {
+
 			case 1:
 				GameObject.Find("A4 Score Text").SetActive(false);
 				GameObject.Find("Bob The Blob Score Text").SetActive(false);
@@ -116,67 +177,91 @@ public class GameManager : MonoBehaviour {
 			default:
 				// 4 players
 				break;
+
 		}
 
 	}
 
-	void Update() {
+	private void UpdateScores() {
 
-		// Pause the game
-		//bool bControllerPause = XCI.GetButtonDown(XboxButton.Start, controller);
-		bool bPause1 = XCI.GetButtonDown(XboxButton.Start, controller[0]);
-		bool bPause2 = XCI.GetButtonDown(XboxButton.Start, controller[1]);
-		bool bPause3 = XCI.GetButtonDown(XboxButton.Start, controller[2]);
-		bool bPause4 = XCI.GetButtonDown(XboxButton.Start, controller[3]);
-		if (bPause1 || bPause2 || bPause3 || bPause4) {
+		int index = 0;
 
-			paused = !paused;
+		foreach (Transform child in MonumentHolder) {
 
-			if (paused == true)
-				Time.timeScale = 0;
+			MonumentScript ms = child.gameObject.GetComponent<MonumentScript>();
+
+			string value = "0";
+			if (ms.iTotalCrates < 10)
+				value += ms.iTotalCrates.ToString();
 			else
-				Time.timeScale = 1;
+				value = ms.iTotalCrates.ToString();
 
-		}
+			PlayerScoreText[index].text = value;
+			index++;
 
-		// Update the text
+			if (ms.iTotalCrates == 15) {
 
-		// Restart the match
-		if (Input.GetKeyDown(KeyCode.R)) {
+				// A player has won!
+				//GameOver();
 
-#if UNITY_5_3_OR_NEWER
-			SceneManager.LoadScene("Game");
-#else
-			Application.LoadLevel("Game");
-#endif
-		}
-
-	}
-
-	// Function to display a GUI on runtime
-	void OnGUI() {
-
-		GUI.skin.font = font;
-
-		if (paused) {
-
-			GUILayout.BeginArea(new Rect(0, (Screen.height / 2) - 50, Screen.width, Screen.height));
-			var centeredStyle = GUI.skin.GetStyle("Label");
-			centeredStyle.alignment = TextAnchor.UpperCenter;
-			GUILayout.Label(" Game is paused");
-			GUILayout.Label(" Press START to unpause");
-			GUILayout.EndArea();
+			}
 
 		}
 
 	}
 
-	public void GameOver() {
+	/// Countdowns ///
 
-		enabled = false;
+	private IEnumerator StartCountdown(float delay) {
+
+		CountdownText.gameObject.SetActive(true);
+
+		source.PlayOneShot(clip[1]);
+		CountdownText.GetComponent<Text>().text = "3";
+		yield return StartCoroutine(WaitForRealSeconds(delay));
+
+		source.PlayOneShot(clip[1]);
+		CountdownText.GetComponent<Text>().text = "2";
+		yield return StartCoroutine(WaitForRealSeconds(delay));
+
+		source.PlayOneShot(clip[1]);
+		CountdownText.GetComponent<Text>().text = "1";
+		yield return StartCoroutine(WaitForRealSeconds(delay));
+
+		source.PlayOneShot(clip[2]);
+		CountdownText.GetComponent<Text>().text = "Go!";
+		yield return StartCoroutine(WaitForRealSeconds(delay));
+
+		CountdownText.GetComponent<Text>().text = "";
+
+		CountdownText.gameObject.SetActive(false);
 
 	}
 
+	private IEnumerator StartingScreen(float delay) {
 
+		Time.timeScale = 0;
+
+		CountdownText.gameObject.SetActive(false);
+		ControlImage.gameObject.SetActive(true);
+
+		yield return StartCoroutine(WaitForRealSeconds(delay));
+
+		ControlImage.gameObject.SetActive(false);
+
+		yield return StartCoroutine(StartCountdown(TimeBetweenCountdowns));
+
+		Time.timeScale = 1;
+
+		source.Play();
+
+	}
+
+	IEnumerator WaitForRealSeconds(float delay) {
+
+		float waitTime = Time.realtimeSinceStartup + delay;
+		yield return new WaitWhile(() => Time.realtimeSinceStartup < waitTime);
+
+	}
 
 }

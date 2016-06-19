@@ -36,10 +36,15 @@ public class CrateSpawner : MonoBehaviour {
 
 			yield return new WaitForSeconds(waitTime);
 
-			if (gridPosition.Count != 0) {
+			if (gridPosition.Count > 0) {
 
 				Crate instance = Instantiate(crate, RandomPosition(), Quaternion.identity) as Crate;
 				instance.transform.SetParent(resourceHolder);
+
+			}
+			else {
+
+				//InitializeList();
 
 			}
 

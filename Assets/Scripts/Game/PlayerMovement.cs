@@ -8,37 +8,34 @@ public class PlayerMovement : MonoBehaviour {
 	//public BoardManager boardScript;
 	public XboxController controller;
 
-	// Accesing the collision check object
-	public BoxCollider2D collisionCheck;
-
-	// Accesing the body
-	public Rigidbody2D rb;
-
 	// Animation controller
-	public Animator anim;
+	private Animator anim;
 
 	// Physics variables //
 
 	// The speed with which the player will move
-	private float fSpeed = 10f;
+	private float fSpeed = 12f;
 	private float fMaxSpeed;
 	private float fSpeedMod;
 
 	// Knowing when to flip the player
-	bool bIsFacingRight;
+	private bool bIsFacingRight;
 
 	// Crate holding variables //
 	public Transform crate;
-	public int iCratesHeld = 0;
-	bool bIsDroppingCrates = false;
+	public AudioClip[] Clip;
+	private int iCratesHeld = 0;
+	private bool bIsDroppingCrates = false;
+
+	// Others
+	private AudioSource source;
 
 	/// MEMBER FUNCTIONS ///
 
 	// This happens before spawning the object
 	void Awake() {
 
-		collisionCheck = GetComponent<BoxCollider2D>();
-		rb = GetComponent<Rigidbody2D>();
+		source = GetComponent<AudioSource>();
 		anim = GetComponent<Animator>();
 
 	}
@@ -65,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Receiving input
 	void Update() {
 
-		bIsDroppingCrates = XCI.GetButtonUp(XboxButton.B, controller);
+		bIsDroppingCrates = XCI.GetButtonDown(XboxButton.B, controller) || XCI.GetButtonDown(XboxButton.X, controller);
 
 	}
 
@@ -123,8 +120,8 @@ public class PlayerMovement : MonoBehaviour {
 			Crate crateInstance = other.gameObject.GetComponent<Crate>();
 
 			if (crateInstance.bCanBePickedUp) {
-				
 
+				source.PlayOneShot(Clip[0]);
 				Destroy(other.gameObject);
 				fSpeed -= fSpeedMod;
 				iCratesHeld++;
@@ -137,8 +134,8 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.tag == "Base1" && this.tag == "P1") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-
-			monumentInstance.TotalCrates += iCratesHeld;
+			source.PlayOneShot(Clip[1]);
+			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
 
@@ -146,8 +143,8 @@ public class PlayerMovement : MonoBehaviour {
 		else if (other.tag == "Base2" && this.tag == "P2") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-
-			monumentInstance.TotalCrates += iCratesHeld;
+			source.PlayOneShot(Clip[1]);
+			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
 
@@ -155,8 +152,8 @@ public class PlayerMovement : MonoBehaviour {
 		else if (other.tag == "Base3" && this.tag == "P3") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-
-			monumentInstance.TotalCrates += iCratesHeld;
+			source.PlayOneShot(Clip[1]);
+			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
 
@@ -164,8 +161,8 @@ public class PlayerMovement : MonoBehaviour {
 		else if (other.tag == "Base4" && this.tag == "P4") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-
-			monumentInstance.TotalCrates += iCratesHeld;
+			source.PlayOneShot(Clip[1]);
+			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
 
