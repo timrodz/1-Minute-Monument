@@ -21,6 +21,9 @@ public class PressStart : MonoBehaviour {
 
 	private AudioSource source;
 	private float waitTime;
+
+	private bool bHasFinishedFadingIn = false;
+	private bool bHasFinishedFadingOut = false;
 	private bool bHasPressedStart = false;
 
 	// Animation variables
@@ -45,11 +48,15 @@ public class PressStart : MonoBehaviour {
 
 		if (zoomInObject.bHasFinishedZoomingIn) {
 
-			if (cg.alpha < 1) {
+			// The first fade-in
+			if (cg.alpha < 1 && !bHasFinishedFadingIn)
+				cg.alpha += (5 * Time.deltaTime);
 
-				cg.alpha += (3 * Time.deltaTime);
+			if (cg.alpha == 1)
+				bHasFinishedFadingIn = true;
 
-			} else {
+			// Process the start button
+			if (bHasFinishedFadingIn) {
 
 				bool bStart1 = XCI.GetButtonDown(XboxButton.Start, controller[0]);
 				bool bStart2 = XCI.GetButtonDown(XboxButton.Start, controller[1]);
@@ -66,28 +73,34 @@ public class PressStart : MonoBehaviour {
 				}
 
 				if (bHasPressedStart) {
+					
+					rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y + (200 * Time.deltaTime), rt.localPosition.z);
 
-					if (rt.localPosition.y <= 80)
-						rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y + (100 * Time.deltaTime), rt.localPosition.z);
+					if (cg.alpha > 0 && !bHasFinishedFadingOut) {
 
-				}
+						cg.alpha -= (3 * Time.deltaTime);
 
-				if (waitTime < 0) {
+					}
 
+					if (rt.localPosition.y >= 100)
+						bHasFinishedFadingOut = true;
 
+					if (bHasFinishedFadingOut) {
+
+						ChangeToScene(1);
+
+					}
 
 				}
 
 			}
-
-			
 
 		}
 
 	}
 
 	// Update is called once per frame
-	private void ChangeToScene(string scene) {
+	private void ChangeToScene(int scene) {
 
 #if UNITY_5_3_OR_NEWER
 		SceneManager.LoadScene(scene);

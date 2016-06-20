@@ -12,14 +12,12 @@ public class ZoomOut : MonoBehaviour {
 	public float finalWidth, finalHeight;
 
 	private RectTransform rt;
-	private AudioSource source;
 	bool bHasFinishedZoomingIn = false;
 	bool bHasFinishedPlayingZoomInClip = false;
 
 	// Use this for initialization
 	void Awake() {
-
-		source = GetComponent<AudioSource>();
+		
 		rt = ImageToZoomIn.GetComponent<RectTransform>();
 		rt.sizeDelta = new Vector2(firstWidth, firstHeight);
 

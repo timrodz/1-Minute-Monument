@@ -84,10 +84,16 @@ public class GameManager : MonoBehaviour {
 
 			source.PlayOneShot(clip[0]);
 
-			if (bIsPaused == true)
+			if (bIsPaused == true) {
+
+				GameObject.Find("Pause Screen").GetComponent<CanvasGroup>().alpha = 1;
 				Time.timeScale = 0;
-			else
+
+			}
+			else {
+				GameObject.Find("Pause Screen").GetComponent<CanvasGroup>().alpha = 0;
 				Time.timeScale = 1;
+			}
 
 		}
 
@@ -112,12 +118,13 @@ public class GameManager : MonoBehaviour {
 
 		if (bIsPaused) {
 
-			GUILayout.BeginArea(new Rect(0, (Screen.height / 2) - 50, Screen.width, Screen.height));
-			var centeredStyle = GUI.skin.GetStyle("Label");
-			centeredStyle.alignment = TextAnchor.UpperCenter;
-			GUILayout.Label(" Game is paused");
-			GUILayout.Label(" Press START to unpause");
-			GUILayout.EndArea();
+			
+			//GUILayout.BeginArea(new Rect(0, (Screen.height / 2) - 50, Screen.width, Screen.height));
+			//var centeredStyle = GUI.skin.GetStyle("Label");
+			//centeredStyle.alignment = TextAnchor.UpperCenter;
+			//GUILayout.Label(" Game is paused");
+			//GUILayout.Label(" Press START to unpause");
+			//GUILayout.EndArea();
 
 		}
 

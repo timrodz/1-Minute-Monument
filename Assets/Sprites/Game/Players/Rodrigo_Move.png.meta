@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 62378c2e3bb2f754aadaf9533989db7e
-timeCreated: 1466337139
+timeCreated: 1466423217
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,86 +59,114 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 36
-        width: 32
-        height: 31
+        y: 38
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 19, y: -4}
+        - {x: 19, y: 12}
+        - {x: 11, y: 19}
+        - {x: -9, y: 19}
+        - {x: -17, y: 16}
+        - {x: -19, y: 4}
+        - {x: -19, y: -13}
+        - {x: -15, y: -11}
+        - {x: -11, y: -12}
+        - {x: -9, y: -10}
+        - {x: -9, y: -12}
+        - {x: -16, y: -12}
+        - {x: -19, y: -14}
+        - {x: -19, y: -19}
+        - {x: 19, y: -19}
+        - {x: 19, y: -13}
+        - {x: 17, y: -12}
     - name: Rodrigo_Move_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 36
-        width: 35
-        height: 35
+        x: 38
+        y: 38
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -13.5, y: 17.5}
-        - {x: -17.5, y: 15.5}
-        - {x: -17.5, y: -17.5}
-        - {x: 17.5, y: -17.5}
-        - {x: 17.5, y: 7.5}
-        - {x: 9.5, y: 17.5}
+      - - {x: 19, y: -7}
+        - {x: 19, y: 12}
+        - {x: 14, y: 19}
+        - {x: -15, y: 19}
+        - {x: -19, y: 17}
+        - {x: -19, y: -19}
+        - {x: 19, y: -19}
+        - {x: 19, y: -13}
+        - {x: 16, y: -12}
     - name: Rodrigo_Move_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 36
-        width: 33
-        height: 36
+        x: 76
+        y: 38
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -9.5, y: 18}
-        - {x: -16.5, y: 12}
-        - {x: -16.5, y: 6}
-        - {x: -10.5, y: -3}
-        - {x: -16.5, y: -11}
-        - {x: -16.5, y: -18}
-        - {x: 16.5, y: -18}
-        - {x: 16.5, y: 9}
-        - {x: 6.5, y: 18}
+      - - {x: 17, y: 10}
+        - {x: 4, y: 16}
+        - {x: -1, y: 16}
+        - {x: -9, y: 8}
+        - {x: -10, y: 4}
+        - {x: -9, y: 0}
+        - {x: -9, y: 2}
+        - {x: -14, y: 5}
+        - {x: -16, y: 6}
+        - {x: -17, y: 2}
+        - {x: -17, y: -16}
+        - {x: -16, y: -19}
+        - {x: 19, y: -19}
+        - {x: 19, y: -18}
+        - {x: 16, y: -12}
+        - {x: 13, y: -12}
+        - {x: 19, y: 8}
     - name: Rodrigo_Move_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 38
         y: 0
-        width: 35
-        height: 35
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 1.5, y: 17.5}
-        - {x: -10.5, y: 17.5}
-        - {x: -17.5, y: 14.5}
-        - {x: -17.5, y: -17.5}
-        - {x: 15.5, y: -17.5}
-        - {x: 17.5, y: -13.5}
-        - {x: 17.5, y: 2.5}
-        - {x: 6.5, y: 13.5}
+      - - {x: -1, y: 18}
+        - {x: -10, y: 11}
+        - {x: -19, y: 8}
+        - {x: -19, y: -12}
+        - {x: -16, y: -18}
+        - {x: -15, y: -19}
+        - {x: 19, y: -19}
+        - {x: 19, y: 18}
     - name: Rodrigo_Move_4
       rect:
         serializedVersion: 2
-        x: 35
+        x: 76
         y: 0
-        width: 34
-        height: 33
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -17, y: 16.5}
-        - {x: -17, y: -16.5}
-        - {x: 16, y: -16.5}
-        - {x: 17, y: -15.5}
-        - {x: 17, y: 7.5}
-        - {x: 11, y: 16.5}
+      - - {x: -6, y: 19}
+        - {x: -19, y: 10}
+        - {x: -19, y: -19}
+        - {x: 19, y: -19}
+        - {x: 19, y: 15}
+        - {x: 11, y: 19}
     outline: []
   spritePackingTag: 
   userData: 
