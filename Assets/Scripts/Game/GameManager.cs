@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
 	public Font font;
 	public AudioClip[] clip;
 
+	private bool bCanPause = false;
 	private bool bIsPaused = false;
 	private int iNumControllers;
 	private AudioSource source;
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour {
 		bool bPause2 = XCI.GetButtonDown(XboxButton.Start, controller[1]);
 		bool bPause3 = XCI.GetButtonDown(XboxButton.Start, controller[2]);
 		bool bPause4 = XCI.GetButtonDown(XboxButton.Start, controller[3]);
-		if (bPause1 || bPause2 || bPause3 || bPause4) {
+		if (bCanPause && (bPause1 || bPause2 || bPause3 || bPause4)) {
 
 			bIsPaused = !bIsPaused;
 
@@ -254,6 +255,8 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 1;
 
 		source.Play();
+
+		bCanPause = true;
 
 	}
 

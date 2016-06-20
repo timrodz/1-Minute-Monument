@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d2eeb84a70652b5449869ddcb9a7f43d
-timeCreated: 1466251692
+timeCreated: 1466391767
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 13
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -58,14 +58,28 @@ TextureImporter:
     - name: Blob-Monument-Export_2
       rect:
         serializedVersion: 2
-        x: 7
+        x: 8
         y: 69
-        width: 74
+        width: 73
         height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 1.1}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -23, y: -8}
+        - {x: -23, y: -20}
+        - {x: -15, y: -24}
+        - {x: 37, y: -24}
+        - {x: 37, y: -13}
+        - {x: 32, y: -8}
+      - - {x: -35, y: -11}
+        - {x: -37, y: -13}
+        - {x: -37, y: -18}
+        - {x: -35, y: -20}
+        - {x: -27, y: -20}
+        - {x: -23, y: -18}
+        - {x: -23, y: -15}
+        - {x: -25, y: -11}
     - name: Blob-Monument-Export_3
       rect:
         serializedVersion: 2
@@ -73,16 +87,16 @@ TextureImporter:
         y: 65
         width: 82
         height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -41, y: 20.5}
-        - {x: -41, y: -15.5}
-        - {x: -30, y: -20.5}
-        - {x: 34, y: -20.5}
-        - {x: 41, y: -18.5}
-        - {x: 41, y: 20.5}
+      - - {x: -41, y: 16.400002}
+        - {x: -41, y: -19.599998}
+        - {x: -30, y: -24.599998}
+        - {x: 34, y: -24.599998}
+        - {x: 41, y: -22.599998}
+        - {x: 41, y: 16.400002}
     - name: Blob-Monument-Export_4
       rect:
         serializedVersion: 2
@@ -91,7 +105,7 @@ TextureImporter:
         width: 80
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 31, y: 28.5}

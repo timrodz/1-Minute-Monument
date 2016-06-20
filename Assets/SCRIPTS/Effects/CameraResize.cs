@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraSize : MonoBehaviour {
+public class CameraResize : MonoBehaviour {
 
 	public float fWidth = 39.0f;
 

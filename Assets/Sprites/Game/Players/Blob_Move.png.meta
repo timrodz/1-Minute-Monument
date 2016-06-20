@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ab5fac30665c87b44b8e34a17382dfb1
-timeCreated: 1466337204
+timeCreated: 1466390575
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,7 @@ TextureImporter:
     21300008: Blob_Move_4
     21300010: Blob_Move_5
     21300012: Blob_Move_6
+    21300014: Blob_Move_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -148,23 +149,25 @@ TextureImporter:
         - {x: 12.5, y: 5.5}
         - {x: 9.5, y: 6.5}
         - {x: 7.5, y: 4.5}
-    - name: Blob_Move_6
+    - name: Blob_Move_7
       rect:
         serializedVersion: 2
-        x: 3
+        x: 2
         y: 0
-        width: 34
+        width: 35
         height: 40
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -10, y: 20}
-        - {x: -17, y: 17}
-        - {x: -17, y: -20}
-        - {x: 17, y: -20}
-        - {x: 17, y: 11}
-        - {x: 13, y: 20}
+      - - {x: 12.5, y: 12}
+        - {x: 7.5, y: 20}
+        - {x: -8.5, y: 20}
+        - {x: -17.5, y: 14}
+        - {x: -17.5, y: -20}
+        - {x: 17.5, y: -20}
+        - {x: 17.5, y: -12}
+        - {x: 14.5, y: -10}
     outline: []
   spritePackingTag: 
   userData: 

@@ -13,7 +13,7 @@ public class CrateSpawner : MonoBehaviour {
 
 	public int Rows, Columns;
 
-	public int StartingPositionX, StartingPositionY;
+	public float StartingPositionX, StartingPositionY;
 
 
 	private List<Vector3> gridPosition = new List<Vector3>();
