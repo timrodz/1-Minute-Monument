@@ -16,7 +16,6 @@ public class ZoomIn : MonoBehaviour {
 
 	[HideInInspector]
 	public bool bHasFinishedZoomingIn = false;
-	bool bHasFinishedPlayingZoomInClip = false;
 
 	// Use this for initialization
 	void Awake() {
@@ -32,7 +31,7 @@ public class ZoomIn : MonoBehaviour {
 
 		if (!bHasFinishedZoomingIn && finalWidth <= rt.rect.width && finalHeight <= rt.rect.height) {
 
-			rt.sizeDelta -= new Vector2(firstWidth / multiplier * (Time.deltaTime), firstHeight / multiplier * (Time.deltaTime));
+			rt.sizeDelta -= new Vector2(firstWidth / multiplier * ( Time.deltaTime ), firstHeight / multiplier * ( Time.deltaTime ));
 
 		}
 		else {
@@ -40,12 +39,6 @@ public class ZoomIn : MonoBehaviour {
 			bHasFinishedZoomingIn = true;
 
 		}
-
-		//if (bHasFinishedZoomingIn && !bHasFinishedPlayingZoomInClip) {
-
-		//	bHasFinishedZoomingIn = false;
-
-		//}
 
 	}
 }

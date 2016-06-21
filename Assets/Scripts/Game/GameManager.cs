@@ -24,25 +24,32 @@ public class GameManager : MonoBehaviour {
 	private Transform ScoreBoardHolder;
 
 	// Accesing the controllers
-	private XboxController[] controller = {
-		XboxController.First,
-		XboxController.Second,
-		XboxController.Third,
-		XboxController.Fourth
-	};
+	private XboxController[] controller =
+		{
+			XboxController.First,
+			XboxController.Second,
+			XboxController.Third,
+			XboxController.Fourth
+		};
 
 	// Others //
-	public float TimeToShowControls = 5f;
-	public float TimeBetweenCountdowns = 1f;
+	private AudioSource source;
 	public Image ControlImage;
+	public Image WinnerImage;
+	public Text WinnerText;
 	public Text CountdownText;
-	public Font font;
 	public AudioClip[] clip;
+	public Font font;
+
+	public float TimeToShowControls = 5f;
+	public float TimeBetweenCountdowns = 0.8f;
 
 	private bool bCanPause = false;
 	private bool bIsPaused = false;
 	private int iNumControllers;
-	private AudioSource source;
+
+	private float fSoundWaitTime = 1.0f;
+	private bool bHasChangedWinnerText = false;
 
 	// Use this for initialization
 	void Awake() {
@@ -78,7 +85,7 @@ public class GameManager : MonoBehaviour {
 		bool bPause2 = XCI.GetButtonDown(XboxButton.Start, controller[1]);
 		bool bPause3 = XCI.GetButtonDown(XboxButton.Start, controller[2]);
 		bool bPause4 = XCI.GetButtonDown(XboxButton.Start, controller[3]);
-		if (bCanPause && (bPause1 || bPause2 || bPause3 || bPause4)) {
+		if (bCanPause && ( bPause1 || bPause2 || bPause3 || bPause4 )) {
 
 			bIsPaused = !bIsPaused;
 
@@ -100,33 +107,15 @@ public class GameManager : MonoBehaviour {
 		// Restart the match
 		if (Input.GetKeyDown(KeyCode.R)) {
 
-#if UNITY_5_3_OR_NEWER
-			SceneManager.LoadScene("Game Better Version");
-#else
-			Application.LoadLevel("Game");
-#endif
+			#if UNITY_5_3_OR_NEWER
+			SceneManager.LoadScene(1);
+			#else
+				Application.LoadLevel(1);
+			#endif
+		
 		}
 
 		UpdateScores();
-
-	}
-
-	// Function to display a GUI on runtime
-	void OnGUI() {
-
-		GUI.skin.font = font;
-
-		if (bIsPaused) {
-
-			
-			//GUILayout.BeginArea(new Rect(0, (Screen.height / 2) - 50, Screen.width, Screen.height));
-			//var centeredStyle = GUI.skin.GetStyle("Label");
-			//centeredStyle.alignment = TextAnchor.UpperCenter;
-			//GUILayout.Label(" Game is paused");
-			//GUILayout.Label(" Press START to unpause");
-			//GUILayout.EndArea();
-
-		}
 
 	}
 
@@ -174,17 +163,17 @@ public class GameManager : MonoBehaviour {
 				GameObject.Find("A4 Score Text").SetActive(false);
 				GameObject.Find("Bob The Blob Score Text").SetActive(false);
 				GameObject.Find("J3FF Score Text").SetActive(false);
-				break;
+			break;
 			case 2:
 				GameObject.Find("Bob The Blob Score Text").SetActive(false);
 				GameObject.Find("J3FF Score Text").SetActive(false);
-				break;
+			break;
 			case 3:
 				GameObject.Find("J3FF Score Text").SetActive(false);
-				break;
+			break;
 			default:
 				// 4 players
-				break;
+			break;
 
 		}
 
@@ -207,10 +196,37 @@ public class GameManager : MonoBehaviour {
 			PlayerScoreText[index].text = value;
 			index++;
 
-			if (ms.iTotalCrates == 15) {
+			if (ms.iTotalCrates >= 15) {
 
-				// A player has won!
-				//GameOver();
+				if (!bHasChangedWinnerText) {
+
+					string tempName = ms.sprites[0].name;
+					if (tempName[0] == 'R') {
+
+						WinnerText.text += "Rodrigo";
+
+					}
+					else if (tempName[0] == 'A') {
+
+						WinnerText.text += "A4";
+
+					}
+					else if (tempName[0] == 'J') {
+
+						WinnerText.text += "J3FF";
+
+					}
+					else {
+
+						WinnerText.text += "Bob The Blob";
+
+					}
+
+					bHasChangedWinnerText = true;
+
+				}
+
+				StartCoroutine(GameOver());
 
 			}
 
@@ -219,6 +235,27 @@ public class GameManager : MonoBehaviour {
 	}
 
 	/// Countdowns ///
+	private IEnumerator GameOver() {
+
+		Time.timeScale = 0;
+
+		source.Stop();
+
+		yield return StartCoroutine(WaitForRealSeconds(1));
+
+		WinnerImage.gameObject.SetActive(true);
+		WinnerText.gameObject.SetActive(true);
+
+		yield return StartCoroutine(WaitForRealSeconds(5));
+
+		#if UNITY_5_3_OR_NEWER
+		SceneManager.LoadScene(2);
+		#else
+		Application.LoadLevel(2);
+		#endif
+
+
+	}
 
 	private IEnumerator StartCountdown(float delay) {
 

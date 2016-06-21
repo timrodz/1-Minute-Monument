@@ -12,7 +12,8 @@ public class PressStart : MonoBehaviour {
 	public AudioClip select;
 
 	// Accesing the controllers
-	private XboxController[] controller = {
+	private XboxController[] controller =
+	{
 		XboxController.First,
 		XboxController.Second,
 		XboxController.Third,
@@ -50,7 +51,7 @@ public class PressStart : MonoBehaviour {
 
 			// The first fade-in
 			if (cg.alpha < 1 && !bHasFinishedFadingIn)
-				cg.alpha += (5 * Time.deltaTime);
+				cg.alpha += ( 5 * Time.deltaTime );
 
 			if (cg.alpha == 1)
 				bHasFinishedFadingIn = true;
@@ -77,12 +78,12 @@ public class PressStart : MonoBehaviour {
 					GameObject.Find("Menu Manager").gameObject.GetComponent<AudioSource>().Stop();
 					//source.Stop();
 
-					rt.sizeDelta += new Vector2(400 * (Time.deltaTime), 400 * (Time.deltaTime));
+					rt.sizeDelta += new Vector2(400 * ( Time.deltaTime ), 400 * ( Time.deltaTime ));
 					//rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y + (200 * Time.deltaTime), rt.localPosition.z);
 
 					if (cg.alpha > 0 && !bHasFinishedFadingOut) {
 
-						cg.alpha -= (3 * Time.deltaTime);
+						cg.alpha -= ( 3 * Time.deltaTime );
 
 					}
 
@@ -107,11 +108,11 @@ public class PressStart : MonoBehaviour {
 	// Update is called once per frame
 	private void ChangeToScene(int scene) {
 
-#if UNITY_5_3_OR_NEWER
+		#if UNITY_5_3_OR_NEWER
 		SceneManager.LoadScene(scene);
-#else
-    Application.LoadLevel(scene);
-#endif
+		#else
+		    Application.LoadLevel(scene);
+		#endif
 
 	}
 

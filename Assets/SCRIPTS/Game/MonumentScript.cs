@@ -8,7 +8,7 @@ public class MonumentScript : MonoBehaviour {
 	private SpriteRenderer sp;
 	private BoxCollider2D bc;
 
-	[HideInInspector]
+	//	[HideInInspector]
 	public int iTotalCrates;
 
 	private AudioSource source;
