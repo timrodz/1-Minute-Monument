@@ -13,7 +13,7 @@ public class PressStart : MonoBehaviour {
 
 	// Accesing the controllers
 	private XboxController[] controller =
-	{
+		{
 		XboxController.First,
 		XboxController.Second,
 		XboxController.Third,
@@ -63,6 +63,7 @@ public class PressStart : MonoBehaviour {
 				bool bStart2 = XCI.GetButtonDown(XboxButton.Start, controller[1]);
 				bool bStart3 = XCI.GetButtonDown(XboxButton.Start, controller[2]);
 				bool bStart4 = XCI.GetButtonDown(XboxButton.Start, controller[3]);
+
 				if (bStart1 || bStart2 || bStart3 || bStart4) {
 
 					source = GetComponent<AudioSource>();

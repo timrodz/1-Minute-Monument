@@ -189,9 +189,9 @@ public class GameManager : MonoBehaviour {
 
 			string value = "0";
 			if (ms.iTotalCrates < 10)
-				value += ms.iTotalCrates.ToString();
+				value += Mathf.Ceil(ms.iTotalCrates).ToString();
 			else
-				value = ms.iTotalCrates.ToString();
+				value = Mathf.Ceil(ms.iTotalCrates).ToString();
 
 			PlayerScoreText[index].text = value;
 			index++;
