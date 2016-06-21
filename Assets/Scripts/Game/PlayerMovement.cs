@@ -108,18 +108,31 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 
-		if (iNumControllers > 0)
+		if (iNumControllers > 0) {
+
 			P1Position = GameObject.FindGameObjectWithTag("P1").transform;
-		P1MonumentPosition = GameObject.FindGameObjectWithTag("Base1").transform;
-		if (iNumControllers > 1)
+			P1MonumentPosition = GameObject.FindGameObjectWithTag("Base1").transform;
+
+		}
+		if (iNumControllers > 1) {
+
 			P2Position = GameObject.FindGameObjectWithTag("P2").transform;
-		P2MonumentPosition = GameObject.FindGameObjectWithTag("Base2").transform;
-		if (iNumControllers > 2)
+			P2MonumentPosition = GameObject.FindGameObjectWithTag("Base2").transform;
+
+		}
+		if (iNumControllers > 2) {
+
 			P3Position = GameObject.FindGameObjectWithTag("P3").transform;
-		P3MonumentPosition = GameObject.FindGameObjectWithTag("Base3").transform;
-		if (iNumControllers > 3)
+			P3MonumentPosition = GameObject.FindGameObjectWithTag("Base3").transform;
+
+		}
+
+		if (iNumControllers > 3) {
+
 			P4Position = GameObject.FindGameObjectWithTag("P4").transform;
-		P4MonumentPosition = GameObject.FindGameObjectWithTag("Base4").transform;
+			P4MonumentPosition = GameObject.FindGameObjectWithTag("Base4").transform;
+
+		}
 
 	}
 
@@ -130,8 +143,8 @@ public class PlayerMovement : MonoBehaviour {
 		// Left stick movement
 		float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 		float axisY = XCI.GetAxis(XboxAxis.LeftStickY, controller);
-		float newPosX = transform.position.x + ( axisX * fSpeed * Time.deltaTime );
-		float newPosY = transform.position.y + ( axisY * fSpeed * Time.deltaTime );
+		float newPosX = transform.position.x + (axisX * fSpeed * Time.deltaTime);
+		float newPosY = transform.position.y + (axisY * fSpeed * Time.deltaTime);
 		transform.position = new Vector3(newPosX, newPosY, transform.position.z);
 
 		// Flip the player's position according to their speed and direction
@@ -185,7 +198,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 
 		// Attacking
-		if (!bIsAttacking && bIsPressingAttack && ( iCratesHeld == 0 )) {
+		if (!bIsAttacking && bIsPressingAttack && (iCratesHeld == 0)) {
 
 			bIsAttacking = true;
 			bIsAttackingMonument = true;
@@ -195,40 +208,40 @@ public class PlayerMovement : MonoBehaviour {
 			source.PlayOneShot(Clip[2]);
 
 			// Determine which player you are next to
-			if (( iNumControllers > 0 ) &&
-			    ( Mathf.Abs(P1Position.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P1Position.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P1" )) {
+			if ((iNumControllers > 0) &&
+				(Mathf.Abs(P1Position.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P1Position.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P1")) {
 
 				enemyString = "P1";
 				print("Attacking P1");
 
 			}
 
-			if (( iNumControllers > 1 ) &&
-			    ( Mathf.Abs(P2Position.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P2Position.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P2" )) {
+			if ((iNumControllers > 1) &&
+				(Mathf.Abs(P2Position.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P2Position.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P2")) {
 
 				enemyString = "P2";
 				print("Attacking P2");
 
 			}
 
-			if (( iNumControllers > 2 ) &&
-			    ( Mathf.Abs(P3Position.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P3Position.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P3" )) {
+			if ((iNumControllers > 2) &&
+				(Mathf.Abs(P3Position.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P3Position.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P3")) {
 
 				enemyString = "P3";
 				print("Attacking P3");
 
 			}
 
-			if (( iNumControllers > 3 ) &&
-			    ( Mathf.Abs(P4Position.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P4Position.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P4" )) {
+			if ((iNumControllers > 3) &&
+				(Mathf.Abs(P4Position.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P4Position.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P4")) {
 
 				enemyString = "P4";
 				print("Attacking P4");
@@ -245,12 +258,12 @@ public class PlayerMovement : MonoBehaviour {
 
 				if (bIsFacingRight) {
 
-					enemyInstance.transform.localPosition = new Vector3(enemyInstance.transform.localPosition.x + ( 30 * Time.deltaTime ), enemyInstance.transform.localPosition.y, enemyInstance.transform.localPosition.z);
+					enemyInstance.transform.localPosition = new Vector3(enemyInstance.transform.localPosition.x + (30 * Time.deltaTime), enemyInstance.transform.localPosition.y, enemyInstance.transform.localPosition.z);
 
 				}
 				else {
 
-					enemyInstance.transform.localPosition = new Vector3(enemyInstance.transform.localPosition.x - ( 30 * Time.deltaTime ), enemyInstance.transform.localPosition.y, enemyInstance.transform.localPosition.z);
+					enemyInstance.transform.localPosition = new Vector3(enemyInstance.transform.localPosition.x - (30 * Time.deltaTime), enemyInstance.transform.localPosition.y, enemyInstance.transform.localPosition.z);
 
 				}
 
@@ -303,12 +316,12 @@ public class PlayerMovement : MonoBehaviour {
 
 		// Attacking monuments
 
-		if (bIsAttacking && ( iCratesHeld == 0 ) && ( bIsAttackingMonument == true )) { // && bMonumentAttack == true)
-			// Determine which monument you are next to
-			if (( iNumControllers > 0 ) &&
-			    ( Mathf.Abs(P1MonumentPosition.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P1MonumentPosition.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P1" )) {
+		if (bIsAttacking && (iCratesHeld == 0) && (bIsAttackingMonument == true)) { // && bMonumentAttack == true)
+																					// Determine which monument you are next to
+			if ((iNumControllers > 0) &&
+				(Mathf.Abs(P1MonumentPosition.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P1MonumentPosition.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P1")) {
 
 				enemyMonumentString = "Base1";
 				print("Attacking Player 1's Monument");
@@ -326,10 +339,10 @@ public class PlayerMovement : MonoBehaviour {
 
 
 			}
-			if (( iNumControllers > 1 ) &&
-			    ( Mathf.Abs(P2MonumentPosition.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P2MonumentPosition.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P2" )) {
+			if ((iNumControllers > 1) &&
+				(Mathf.Abs(P2MonumentPosition.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P2MonumentPosition.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P2")) {
 
 				enemyMonumentString = "Base2";
 				print("Attacking Player 2's Monument");
@@ -346,10 +359,10 @@ public class PlayerMovement : MonoBehaviour {
 				//    bMonumentAttack = false;
 
 			}
-			if (( iNumControllers > 2 ) &&
-			    ( Mathf.Abs(P3MonumentPosition.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P3MonumentPosition.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P3" )) {
+			if ((iNumControllers > 2) &&
+				(Mathf.Abs(P3MonumentPosition.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P3MonumentPosition.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P3")) {
 
 				enemyMonumentString = "Base3";
 				print("Attacking Player 3's Monument");
@@ -366,10 +379,10 @@ public class PlayerMovement : MonoBehaviour {
 				//    bMonumentAttack = false;
 
 			}
-			if (( iNumControllers > 3 ) &&
-			    ( Mathf.Abs(P4MonumentPosition.position.x - transform.position.x) < fAttackZone ) &&
-			    ( Mathf.Abs(P4MonumentPosition.position.y - transform.position.y) < fAttackZone ) &&
-			    ( this.tag != "P4" )) {
+			if ((iNumControllers > 3) &&
+				(Mathf.Abs(P4MonumentPosition.position.x - transform.position.x) < fAttackZone) &&
+				(Mathf.Abs(P4MonumentPosition.position.y - transform.position.y) < fAttackZone) &&
+				(this.tag != "P4")) {
 
 				enemyMonumentString = "Base4";
 				print("Attacking Player 4's Monument");
@@ -405,7 +418,7 @@ public class PlayerMovement : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 
 		// Receiving a crate
-		if (( other.tag == "Resource" ) && ( iCratesHeld < 5 )) {
+		if ((other.tag == "Resource") && (iCratesHeld < 5)) {
 			// Get the components of the crate instance
 			Crate crateInstance = other.gameObject.GetComponent<Crate>();
 

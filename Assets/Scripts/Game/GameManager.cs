@@ -246,7 +246,9 @@ public class GameManager : MonoBehaviour {
 		WinnerImage.gameObject.SetActive(true);
 		WinnerText.gameObject.SetActive(true);
 
-		yield return StartCoroutine(WaitForRealSeconds(5));
+		yield return StartCoroutine(WaitForRealSeconds(4));
+
+		Time.timeScale = 1;
 
 		#if UNITY_5_3_OR_NEWER
 		SceneManager.LoadScene(2);
