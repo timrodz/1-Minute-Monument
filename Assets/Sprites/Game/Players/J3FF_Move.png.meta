@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: dfbadc2bf3675ec48a1b2a2e7e924f41
-timeCreated: 1466215710
+timeCreated: 1466471789
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,92 +59,87 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 38
-        width: 38
-        height: 38
+        y: 34
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -5, y: 16}
-        - {x: -16, y: 1}
-        - {x: -18, y: -7}
-        - {x: -18, y: -19}
-        - {x: 18, y: -19}
-        - {x: 18, y: 0}
-        - {x: 6, y: 16}
+      - - {x: -5, y: 17}
+        - {x: -16, y: 5}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 10}
+        - {x: 7, y: 17}
     - name: J3FF_Move_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 38
-        width: 38
-        height: 38
+        x: 32
+        y: 34
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 1, y: 15}
-        - {x: -9, y: 15}
-        - {x: -18, y: -1}
-        - {x: -18, y: -19}
-        - {x: 16, y: -19}
-        - {x: 18, y: -18}
-        - {x: 18, y: 1}
+      - - {x: -4, y: 17}
+        - {x: -16, y: 5}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 4}
+        - {x: 3, y: 17}
     - name: J3FF_Move_2
       rect:
         serializedVersion: 2
-        x: 76
-        y: 38
-        width: 38
-        height: 38
+        x: 64
+        y: 34
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -18, y: -7}
-        - {x: -18, y: -19}
-        - {x: 18, y: -19}
-        - {x: 18, y: -4}
-        - {x: 17, y: 0}
-        - {x: 2, y: 14}
-        - {x: -6, y: 14}
+      - - {x: -4, y: 16}
+        - {x: -16, y: 3}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 3}
+        - {x: 4, y: 16}
     - name: J3FF_Move_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 38
-        height: 38
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 1, y: 15}
-        - {x: -9, y: 15}
-        - {x: -18, y: -1}
-        - {x: -18, y: -19}
-        - {x: 16, y: -19}
-        - {x: 18, y: -18}
-        - {x: 18, y: 1}
+      - - {x: -4, y: 17}
+        - {x: -16, y: 5}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 4}
+        - {x: 3, y: 17}
     - name: J3FF_Move_4
       rect:
         serializedVersion: 2
-        x: 38
+        x: 32
         y: 0
-        width: 38
-        height: 38
+        width: 32
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 17}
-        - {x: -18, y: -5}
-        - {x: -18, y: -19}
-        - {x: 18, y: -19}
-        - {x: 18, y: -4}
-        - {x: 15, y: 5}
-        - {x: 1, y: 17}
+      - - {x: -9, y: 17}
+        - {x: -16, y: 5}
+        - {x: -16, y: -17}
+        - {x: 16, y: -17}
+        - {x: 16, y: 6}
+        - {x: 4, y: 17}
     outline: []
   spritePackingTag: 
   userData: 

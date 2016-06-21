@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9720c2ae9504e3343a11b9b0096287ab
-timeCreated: 1466390582
+timeCreated: 1466472105
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -58,56 +58,56 @@ TextureImporter:
     - name: A4_Move_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 43
-        width: 26
-        height: 32
+        x: 0
+        y: 35
+        width: 28
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: A4_Move_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 43
-        width: 26
-        height: 33
+        x: 28
+        y: 35
+        width: 28
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: A4_Move_2
       rect:
         serializedVersion: 2
-        x: 88
-        y: 43
-        width: 27
-        height: 34
+        x: 56
+        y: 35
+        width: 28
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: A4_Move_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 3
+        x: 0
+        y: 0
         width: 28
         height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: A4_Move_4
       rect:
         serializedVersion: 2
-        x: 48
-        y: 3
-        width: 26
-        height: 33
+        x: 28
+        y: 0
+        width: 28
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     outline: []

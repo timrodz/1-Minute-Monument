@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ab5fac30665c87b44b8e34a17382dfb1
-timeCreated: 1466390575
+timeCreated: 1466471934
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,7 +11,6 @@ TextureImporter:
     21300008: Blob_Move_4
     21300010: Blob_Move_5
     21300012: Blob_Move_6
-    21300014: Blob_Move_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -61,113 +60,148 @@ TextureImporter:
     - name: Blob_Move_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 82
-        width: 35
-        height: 30
+        width: 40
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 5, y: 10.5}
+        - {x: 2, y: 11.5}
+        - {x: -12, y: 11.5}
+        - {x: -20, y: 1.5}
+        - {x: -20, y: -17.5}
+        - {x: -16, y: -20.5}
+        - {x: 17, y: -20.5}
+        - {x: 20, y: -19.5}
+        - {x: 20, y: -10.5}
+        - {x: 19, y: -4.5}
     - name: Blob_Move_1
       rect:
         serializedVersion: 2
-        x: 39
+        x: 40
         y: 82
-        width: 35
-        height: 30
+        width: 40
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -3, y: 9.5}
+        - {x: -11, y: 11.5}
+        - {x: -14, y: 11.5}
+        - {x: -16, y: 8.5}
+        - {x: -20, y: -5.5}
+        - {x: -20, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: -11.5}
+        - {x: 19, y: -6.5}
     - name: Blob_Move_2
       rect:
         serializedVersion: 2
-        x: 76
+        x: 80
         y: 82
-        width: 35
-        height: 30
+        width: 40
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -13, y: 11.5}
+        - {x: -18, y: 4.5}
+        - {x: -16, y: 1.5}
+        - {x: -20, y: -7.5}
+        - {x: -20, y: -18.5}
+        - {x: -18, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: -6.5}
+        - {x: -8, y: 11.5}
     - name: Blob_Move_3
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 41
-        width: 35
-        height: 35
+        width: 40
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 12.5, y: 17.5}
-        - {x: -8.5, y: 17.5}
-        - {x: -17.5, y: 10.5}
-        - {x: -17.5, y: -17.5}
-        - {x: 17.5, y: -17.5}
-        - {x: 17.5, y: -0.5}
-        - {x: 16.5, y: 10.5}
+      - - {x: -20, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: -3.5}
+        - {x: 16, y: 9.5}
+        - {x: 5, y: 16.5}
+        - {x: -19, y: 16.5}
+        - {x: -20, y: 11.5}
     - name: Blob_Move_4
       rect:
         serializedVersion: 2
-        x: 39
+        x: 40
         y: 41
-        width: 35
-        height: 39
+        width: 40
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 10.5, y: 19.5}
-        - {x: -10.5, y: 19.5}
-        - {x: -17.5, y: 10.5}
-        - {x: -17.5, y: -19.5}
-        - {x: 17.5, y: -19.5}
-        - {x: 17.5, y: -3.5}
-        - {x: 16.5, y: 7.5}
+      - - {x: -9, y: 20.5}
+        - {x: -17, y: 17.5}
+        - {x: -17, y: 5.5}
+        - {x: -13, y: 4.5}
+        - {x: -10, y: 7.5}
+        - {x: -20, y: -13.5}
+        - {x: -20, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: 8.5}
+        - {x: 7, y: 20.5}
     - name: Blob_Move_5
       rect:
         serializedVersion: 2
-        x: 76
+        x: 80
         y: 41
-        width: 35
+        width: 40
         height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 17.5, y: -20.5}
-        - {x: 17.5, y: -1.5}
-        - {x: 11.5, y: 20.5}
-        - {x: -10.5, y: 20.5}
-        - {x: -17.5, y: 17.5}
-        - {x: -17.5, y: -20.5}
-      - - {x: 9.5, y: 1.5}
-        - {x: 12.5, y: 2.5}
-        - {x: 12.5, y: 5.5}
-        - {x: 9.5, y: 6.5}
-        - {x: 7.5, y: 4.5}
-    - name: Blob_Move_7
+      - - {x: -16, y: 20.5}
+        - {x: -20, y: 11.5}
+        - {x: -20, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: 13.5}
+        - {x: 6, y: 20.5}
+      - - {x: -13, y: 1.5}
+        - {x: -10, y: 2.5}
+        - {x: -10, y: 5.5}
+        - {x: -13, y: 6.5}
+        - {x: -15, y: 4.5}
+    - name: Blob_Move_6
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 35
-        height: 40
+        width: 40
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 12.5, y: 12}
-        - {x: 7.5, y: 20}
-        - {x: -8.5, y: 20}
-        - {x: -17.5, y: 14}
-        - {x: -17.5, y: -20}
-        - {x: 17.5, y: -20}
-        - {x: 17.5, y: -12}
-        - {x: 14.5, y: -10}
+      - - {x: -12, y: 8.5}
+        - {x: -9, y: 9.5}
+        - {x: -11, y: 2.5}
+        - {x: -20, y: -14.5}
+        - {x: -20, y: -18.5}
+        - {x: -19, y: -20.5}
+        - {x: 20, y: -20.5}
+        - {x: 20, y: 4.5}
+        - {x: 17, y: 15.5}
+        - {x: 6, y: 20.5}
+        - {x: -11, y: 20.5}
+        - {x: -14, y: 10.5}
     outline: []
   spritePackingTag: 
   userData: 

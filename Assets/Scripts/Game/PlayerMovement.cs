@@ -9,7 +9,11 @@ public class PlayerMovement : MonoBehaviour {
 	private Animator anim;
 
 	// Attacking variables //
+	private bool bIsPressingAttack = false;
+	private bool bIsAttacking = false;
 	private float fAttackZone = 2.5f;
+	private float fAttackResetTimer = 0.5f;
+
 	private Transform P1Position;
 	private Transform P2Position;
 	private Transform P3Position;
@@ -30,7 +34,6 @@ public class PlayerMovement : MonoBehaviour {
 	public AudioClip[] Clip;
 	private int iCratesHeld = 0;
 	private bool bIsDroppingCrates = false;
-	private bool bIsAttacking = false;
 
 	// Others //
 	private int iNumControllers;
@@ -69,7 +72,20 @@ public class PlayerMovement : MonoBehaviour {
 	void Update() {
 
 		bIsDroppingCrates = XCI.GetButtonDown(XboxButton.B, controller) || XCI.GetButtonDown(XboxButton.X, controller);
-		bIsAttacking = XCI.GetButtonDown(XboxButton.A, controller);
+		bIsPressingAttack = XCI.GetButtonDown(XboxButton.A, controller);
+
+		/// WORKING ON THIS
+		// A timer to reset the attack
+		if (bIsPressingAttack) {
+
+			if (fAttackResetTimer <= 0) {
+
+				print("Restting attack");
+				fAttackResetTimer = 0.3f;
+
+			}
+
+		}
 
 		if (iNumControllers > 0)
 			P1Position = GameObject.FindGameObjectWithTag("P1").transform;
@@ -109,10 +125,31 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 
+		/// WORKING ON THIS
+		if (bIsAttacking) {
+
+			print("Currently attacking");
+			fAttackResetTimer -= Time.deltaTime;
+
+		}
+
+		/// WORKING ON THIS
+		if (fAttackResetTimer < 0) {
+
+			fAttackResetTimer = 0.0f;
+			print("Can attack now");
+			bIsAttacking = false;
+
+		}
+
 		// Attacking
-		if (anim.GetNextAnimatorStateInfo(0).IsName("Rodrigo Attack") == false && bIsAttacking && (iCratesHeld == 0)) {
+		if (!bIsAttacking && bIsPressingAttack && (iCratesHeld == 0)) {
+
+			bIsAttacking = true;
 
 			anim.SetBool("Attack", true);
+
+			source.PlayOneShot(Clip[2]);
 
 			// Determine which player you are next to
 			if ((iNumControllers > 0) &&
@@ -156,6 +193,8 @@ public class PlayerMovement : MonoBehaviour {
 			}
 
 			if (enemyString != null) {
+
+				source.PlayOneShot(Clip[3]);
 
 				// Find the enemy object and instance of that object
 				GameObject enemy = GameObject.FindGameObjectWithTag(enemyString);
@@ -215,7 +254,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 
-		if (!bIsAttacking) {
+		if (!bIsPressingAttack) {
 
 			anim.SetBool("Attack", false);
 
@@ -225,12 +264,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Reverse the facing position
 	private void Flip() {
+
 		bIsFacingRight = !bIsFacingRight;
-		// We use a 3D vector because the world has 3D objects
-		// Using a 2D vector would make this objects disappear
 		Vector3 tempScale = transform.localScale;
 		tempScale.x *= -1;
 		transform.localScale = tempScale;
+
 	}
 
 	// Triggering events with either resources or bases or attacking
@@ -240,19 +279,26 @@ public class PlayerMovement : MonoBehaviour {
 		if ((other.tag == "Resource") && (iCratesHeld < 5)) {
 			// Get the components of the crate instance
 			Crate crateInstance = other.gameObject.GetComponent<Crate>();
+
 			if (crateInstance.bCanBePickedUp) {
+
 				source.PlayOneShot(Clip[0]);
 				Destroy(other.gameObject);
 				fSpeed -= fSpeedMod;
 				iCratesHeld++;
+
 			}
+
 		}
 
 		// Dropping off crates - just for player one at the moment - will need to add base 1, 2, 3, 4 tags etc
 		if (other.tag == "Base1" && this.tag == "P1") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-			source.PlayOneShot(Clip[1]);
+
+			if (iCratesHeld > 0)
+				source.PlayOneShot(Clip[1]);
+
 			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
@@ -261,7 +307,10 @@ public class PlayerMovement : MonoBehaviour {
 		else if (other.tag == "Base2" && this.tag == "P2") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-			source.PlayOneShot(Clip[1]);
+
+			if (iCratesHeld > 0)
+				source.PlayOneShot(Clip[1]);
+
 			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
@@ -270,7 +319,10 @@ public class PlayerMovement : MonoBehaviour {
 		else if (other.tag == "Base3" && this.tag == "P3") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-			source.PlayOneShot(Clip[1]);
+
+			if (iCratesHeld > 0)
+				source.PlayOneShot(Clip[1]);
+
 			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;
@@ -279,7 +331,10 @@ public class PlayerMovement : MonoBehaviour {
 		else if (other.tag == "Base4" && this.tag == "P4") {
 
 			MonumentScript monumentInstance = other.gameObject.GetComponent<MonumentScript>();
-			source.PlayOneShot(Clip[1]);
+
+			if (iCratesHeld > 0)
+				source.PlayOneShot(Clip[1]);
+
 			monumentInstance.iTotalCrates += iCratesHeld;
 			iCratesHeld = 0;
 			fSpeed = fMaxSpeed;

@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: f523b71a799c9b449b9831b04b85e4f4
-timeCreated: 1466416604
+timeCreated: 1466472086
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Blob_Attack_0
+    21300002: Blob_Attack_1
+    21300004: Blob_Attack_2
+    21300006: Blob_Attack_3
+    21300008: Blob_Attack_4
+    21300010: Blob_Attack_5
+    21300012: Blob_Attack_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,8 +36,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,18 +45,234 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Blob_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.8600006, y: 10.5}
+        - {x: 2.8600006, y: 11.5}
+        - {x: -11.139999, y: 11.5}
+        - {x: -19.14, y: 1.5}
+        - {x: -19.14, y: -17.5}
+        - {x: -15.139999, y: -20.5}
+        - {x: 17.86, y: -20.5}
+        - {x: 20.86, y: -19.5}
+        - {x: 20.86, y: -10.5}
+        - {x: 19.86, y: -4.5}
+      - - {x: 12.860001, y: 13.5}
+        - {x: 12.860001, y: 9.5}
+        - {x: 15.860001, y: 6.5}
+        - {x: 18.86, y: 7.5}
+        - {x: 18.86, y: 13.5}
+        - {x: 16.86, y: 15.5}
+        - {x: 14.860001, y: 15.5}
+    - name: Blob_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 82
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.1399994, y: 9.5}
+        - {x: -10.139999, y: 11.5}
+        - {x: -13.139999, y: 11.5}
+        - {x: -15.139999, y: 8.5}
+        - {x: -19.14, y: -5.5}
+        - {x: -19.14, y: -20.5}
+        - {x: 20.86, y: -20.5}
+        - {x: 20.86, y: -11.5}
+        - {x: 19.86, y: -6.5}
+      - - {x: 13.860001, y: 16.5}
+        - {x: 11.860001, y: 12.5}
+        - {x: 11.860001, y: 8.5}
+        - {x: 14.860001, y: 5.5}
+        - {x: 22.86, y: 5.5}
+        - {x: 23.86, y: 8.5}
+        - {x: 23.86, y: 15.5}
+        - {x: 20.86, y: 16.5}
+    - name: Blob_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 82
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.139999, y: 11.5}
+        - {x: -17.14, y: 4.5}
+        - {x: -15.139999, y: 1.5}
+        - {x: -19.14, y: -7.5}
+        - {x: -19.14, y: -18.5}
+        - {x: -17.14, y: -20.5}
+        - {x: 20.86, y: -20.5}
+        - {x: 20.86, y: -6.5}
+        - {x: -7.1399994, y: 11.5}
+      - - {x: 30.86, y: 16.5}
+        - {x: 25.86, y: 12.5}
+        - {x: 25.86, y: 8.5}
+        - {x: 30.86, y: 3.5}
+        - {x: 38.86, y: 3.5}
+        - {x: 39.86, y: 6.5}
+        - {x: 39.86, y: 14.5}
+        - {x: 35.86, y: 16.5}
+    - name: Blob_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.14, y: -20.5}
+        - {x: 20.86, y: -20.5}
+        - {x: 20.86, y: -3.5}
+        - {x: 16.86, y: 9.5}
+        - {x: 5.8600006, y: 16.5}
+        - {x: -18.14, y: 16.5}
+        - {x: -19.14, y: 11.5}
+      - - {x: 36.86, y: 10.5}
+        - {x: 35.86, y: 8.5}
+        - {x: 35.86, y: -4.5}
+        - {x: 40.86, y: -6.5}
+        - {x: 47.86, y: -6.5}
+        - {x: 48.86, y: -3.5}
+        - {x: 48.86, y: 3.5}
+        - {x: 41.86, y: 10.5}
+    - name: Blob_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 41
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.139999, y: 20.5}
+        - {x: -16.14, y: 17.5}
+        - {x: -16.14, y: 5.5}
+        - {x: -12.139999, y: 4.5}
+        - {x: -9.139999, y: 7.5}
+        - {x: -19.14, y: -13.5}
+        - {x: -19.14, y: -20.5}
+        - {x: 21.86, y: -20.5}
+        - {x: 21.86, y: 7.5}
+        - {x: 7.8600006, y: 20.5}
+      - - {x: 41.86, y: -8.5}
+        - {x: 40.86, y: -9.5}
+        - {x: 36.86, y: -15.5}
+        - {x: 36.86, y: -17.5}
+        - {x: 38.86, y: -18.5}
+        - {x: 57.86, y: -18.5}
+        - {x: 58.86, y: -16.5}
+        - {x: 58.86, y: -9.5}
+        - {x: 56.86, y: -8.5}
+    - name: Blob_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 41
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.139999, y: 20.5}
+        - {x: -19.14, y: 11.5}
+        - {x: -19.14, y: -20.5}
+        - {x: 19.86, y: -20.5}
+        - {x: 22.86, y: -17.5}
+        - {x: 22.86, y: 12.5}
+        - {x: 6.8600006, y: 20.5}
+      - - {x: 35.86, y: -8.5}
+        - {x: 38.86, y: -12.5}
+        - {x: 41.86, y: -12.5}
+        - {x: 43.86, y: -11.5}
+        - {x: 43.86, y: -6.5}
+        - {x: 42.86, y: -4.5}
+        - {x: 39.86, y: -3.5}
+        - {x: 35.86, y: -3.5}
+        - {x: 34.86, y: -5.5}
+      - - {x: 50.86, y: -9.5}
+        - {x: 53.86, y: -8.5}
+        - {x: 53.86, y: -5.5}
+        - {x: 50.86, y: -4.5}
+        - {x: 48.86, y: -6.5}
+      - - {x: -12.139999, y: 1.5}
+        - {x: -9.139999, y: 2.5}
+        - {x: -9.139999, y: 5.5}
+        - {x: -12.139999, y: 6.5}
+        - {x: -14.139999, y: 4.5}
+    - name: Blob_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 87
+        height: 41
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.139999, y: 8.5}
+        - {x: -8.139999, y: 9.5}
+        - {x: -10.139999, y: 2.5}
+        - {x: -19.14, y: -14.5}
+        - {x: -19.14, y: -18.5}
+        - {x: -18.14, y: -20.5}
+        - {x: 21.86, y: -20.5}
+        - {x: 21.86, y: 0.5}
+        - {x: 17.86, y: 15.5}
+        - {x: 6.8600006, y: 20.5}
+        - {x: -10.139999, y: 20.5}
+        - {x: -13.139999, y: 10.5}
+      - - {x: 32.86, y: -7.5}
+        - {x: 28.86, y: -11.5}
+        - {x: 28.86, y: -13.5}
+        - {x: 29.86, y: -15.5}
+        - {x: 35.86, y: -15.5}
+        - {x: 37.86, y: -14.5}
+        - {x: 38.86, y: -12.5}
+        - {x: 38.86, y: -8.5}
+        - {x: 36.86, y: -7.5}
+      - - {x: 61.86, y: -8.5}
+        - {x: 61.86, y: -9.5}
+        - {x: 64.86, y: -12.5}
+        - {x: 66.86, y: -12.5}
+        - {x: 67.86, y: -11.5}
+        - {x: 67.86, y: -4.5}
+        - {x: 66.86, y: -4.5}
     outline: []
   spritePackingTag: 
   userData: 

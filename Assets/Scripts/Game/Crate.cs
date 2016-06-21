@@ -11,7 +11,7 @@ public class Crate : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		if (fTimeAfterSpawn < 1) {
+		if (fTimeAfterSpawn < 0.1) {
 			fTimeAfterSpawn += Time.fixedDeltaTime;
 		}
 		else {
