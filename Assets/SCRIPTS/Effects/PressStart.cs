@@ -65,16 +65,20 @@ public class PressStart : MonoBehaviour {
 				if (bStart1 || bStart2 || bStart3 || bStart4) {
 
 					source = GetComponent<AudioSource>();
+
 					source.PlayOneShot(select);
-					source.volume = 1;
 					waitTime = select.length;
 					bHasPressedStart = true;
 
 				}
 
 				if (bHasPressedStart) {
-					
-					rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y + (200 * Time.deltaTime), rt.localPosition.z);
+
+					GameObject.Find("Menu Manager").gameObject.GetComponent<AudioSource>().Stop();
+					//source.Stop();
+
+					rt.sizeDelta += new Vector2(400 * (Time.deltaTime), 400 * (Time.deltaTime));
+					//rt.localPosition = new Vector3(rt.localPosition.x, rt.localPosition.y + (200 * Time.deltaTime), rt.localPosition.z);
 
 					if (cg.alpha > 0 && !bHasFinishedFadingOut) {
 
@@ -82,7 +86,8 @@ public class PressStart : MonoBehaviour {
 
 					}
 
-					if (rt.localPosition.y >= 100)
+					//if (rt.localPosition.y >= 100)
+					if (rt.sizeDelta.x > 700)
 						bHasFinishedFadingOut = true;
 
 					if (bHasFinishedFadingOut) {

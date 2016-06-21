@@ -30,7 +30,7 @@ public class ZoomIn : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		if (finalWidth <= rt.rect.width && finalHeight <= rt.rect.height) {
+		if (!bHasFinishedZoomingIn && finalWidth <= rt.rect.width && finalHeight <= rt.rect.height) {
 
 			rt.sizeDelta -= new Vector2(firstWidth / multiplier * (Time.deltaTime), firstHeight / multiplier * (Time.deltaTime));
 
@@ -41,12 +41,11 @@ public class ZoomIn : MonoBehaviour {
 
 		}
 
-		if (bHasFinishedZoomingIn && !bHasFinishedPlayingZoomInClip) {
+		//if (bHasFinishedZoomingIn && !bHasFinishedPlayingZoomInClip) {
 
-			bHasFinishedZoomingIn = false;
-			bHasFinishedPlayingZoomInClip = true;
+		//	bHasFinishedZoomingIn = false;
 
-		}
+		//}
 
 	}
 }

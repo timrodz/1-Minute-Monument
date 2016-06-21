@@ -12,9 +12,6 @@ public class MenuManager : MonoBehaviour {
 
 	void Awake() {
 		source = GetComponent<AudioSource>();
-
-		//GameObject logo = GameObject.Find("Logo");
-		//rt = logo.gameObject.GetComponent<RectTransform>();
 		zoomInObject = GameObject.Find("Logo").gameObject.GetComponent<ZoomIn>();
 
 	}
